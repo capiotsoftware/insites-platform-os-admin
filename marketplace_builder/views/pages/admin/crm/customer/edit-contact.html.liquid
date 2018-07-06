@@ -1,0 +1,139 @@
+---
+slug: admin/crm/edit-contact
+format: html
+layout_name: admin/empty_layout
+---
+{%- assign name = 'Edit Contact' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+
+<div class="grid-container-full">
+    <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+        <div class="add-container">
+            <ins-card steady>
+                <h3>Profile Picture</h3>
+                <ins-image-picker type="picture" button-color="blue"></ins-image-picker>
+                <h3>Contact Details</h3>
+                <div class="grid-x grid-padding-x margin-bottom-20">
+                <div class="large-4 cell">
+                    <ins-input label="Name" placeholder="Name"></ins-input>
+                    <label for="contactType">Contact Type</label>
+                    <select name="contactType" id="contactType">
+                    <option value="Test 1">Primary</option>
+                    <option value="Test 1">Test 1</option>
+                    <option value="Test 2">Test 2</option>
+                    <option value="Test 3">Test 3</option>
+                    </select>
+                </div>
+                <div class="large-4 cell">
+                    <label for="workPhone">Work Phone</label>
+                    <div class="clearfix">
+                    <div class="la-20">
+                        <select name="workPhone" id="workPhone">
+                        <option value="61">+61</option>
+                        <option value="62">+62</option>
+                        <option value="63">+63</option>
+                        </select>
+                    </div>
+                    <div class="la-30">
+                        <ins-input placeholder="Area Code" value="1300"></ins-input>
+                    </div>
+                    <div class="la-50">
+                        <ins-input placeholder="Phone Number" value="123 123"></ins-input>
+                    </div>
+                    </div>
+                    <label for="mobilePhone">Mobile Phone</label>
+                    <div class="clearfix">
+                    <div class="la-20">
+                        <select name="mobilePhone" id="mobilePhone">
+                        <option value="61">+61</option>
+                        <option value="62">+62</option>
+                        <option value="63">+63</option>
+                        </select>
+                    </div>
+                    <div class="la-30">
+                        <ins-input placeholder="Area Code" value="401"></ins-input>
+                    </div>
+                    <div class="la-50">
+                        <ins-input placeholder="Phone Number" value="123 123"></ins-input>
+                    </div>
+                    </div>
+                </div>
+                <div class="large-4 cell">
+                    <label for="homePhone">Home Phone</label>
+                    <div class="clearfix">
+                    <div class="la-20">
+                        <select name="homePhone" id="homePhone">
+                        <option value="61">+61</option>
+                        <option value="62">+62</option>
+                        <option value="63">+63</option>
+                        </select>
+                    </div>
+                    <div class="la-30">
+                        <ins-input placeholder="Area Code" value="421"></ins-input>
+                    </div>
+                    <div class="la-50">
+                        <ins-input placeholder="Phone Number" value="123 123"></ins-input>
+                    </div>
+                    </div>
+                    <ins-input label="Email Address" placeholder="Email Address" ></ins-input>
+                </div>
+                </div>
+                <h3>Address</h3>
+                <div class="grid-x grid-padding-x margin-bottom-20">
+                    <div class="large-4 cell">
+                    <ins-input label="Search Address" placeholder="Search Address"></ins-input>
+                    <div class="clearfix">
+                        <div class="la-30">
+                        <ins-input label="Address" placeholder="Street Number"></ins-input>
+                        </div>
+                        <div class="la-70">
+                        <ins-input placeholder="Address" class="margin-top-23"></ins-input>
+                        </div>
+                    </div>
+                    
+                    </div>
+                    <div class="large-4 cell">
+                        <ins-input label="State" placeholder="State"></ins-input>
+                        <ins-input label="City" placeholder="City"></ins-input>
+                    </div>
+                    <div class="large-4 cell">
+                        <ins-input label="Post Code" placeholder="Post Code"></ins-input>
+                        <ins-input label="Country" placeholder="Country"></ins-input>
+                    </div>
+                </div>
+                <h3>Additional Info</h3>
+                <div class="grid-x grid-padding-x margin-bottom-20">
+                    <div class="large-4 cell">
+                    <ins-input label="Facebook" placeholder="Facebook Profile Link"></ins-input>
+                    <ins-input label="Twitter" placeholder="Twitter Profile Link"></ins-input>
+                    </div>
+                    <div class="large-4 cell">
+                        <ins-input label="YouTube" placeholder="YouTube Profile Link"></ins-input>
+                    <ins-input label="LinkedIn" placeholder="LinkedIn Profile Link"></ins-input>
+                    </div>
+                    <div class="large-4 cell">
+                        <ins-input label="Google +" placeholder="Google + Profile Link"></ins-input>
+                    <ins-input label="Instagram" placeholder="Instagram Profile Link"></ins-input>
+                    </div>
+                </div>
+                <h3>Notes</h3>
+                <div class="grid-x grid-padding-x">
+                    <div class="large-4 cell">
+                    <ins-textarea label="Notes" placeholder="Notes"></ins-textarea>
+                    </div>
+                </div>
+            </ins-card>
+            <div class="margin-top-30">
+                <div class="float-left">
+                    <ins-button label="ARCHIVE CONTACT" color="negative"></ins-button>
+                </div>
+                <div class="float-right">
+                    <ins-button label="CANCEL" outlined class="margin-right-10"></ins-button>
+                    <ins-button label="UPDATE CONTACT" solid></ins-button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

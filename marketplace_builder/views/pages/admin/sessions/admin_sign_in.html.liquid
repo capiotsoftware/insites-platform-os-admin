@@ -1,0 +1,26 @@
+---
+slug: admin/sessions/new
+format: html
+layout_name: admin/session
+authorization_policies:
+  - only_allow_if_no_session
+---
+{%- assign name = 'Admin Login' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+
+{% if flash.alert != blank %}
+  <p>{{ flash.alert }}</p>
+{% endif %}
+
+{% render_form 'admin_sign_in' %}
+
+<script>
+  var sessionDeleted = sessionStorage.getItem("session_deleted");
+
+  if (sessionDeleted === 'success'){
+    toastr.options.closeHtml = '<button><i class="icon-close-1"></i></button>';
+    toastr.options.closeButton = true;
+    toastr.success('You are now logged out.');
+    sessionStorage.setItem("session_deleted", "nope");
+  }
+</script>

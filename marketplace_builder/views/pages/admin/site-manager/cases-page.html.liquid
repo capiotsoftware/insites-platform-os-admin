@@ -1,0 +1,94 @@
+--- 
+slug: admin/site-manager/cases
+format: html
+layout_name: admin/empty_layout
+--- 
+{%- assign name = 'Cases' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+
+<div class="grid-container-full">
+    <div class="grid-x grid-padding-x">
+      <div class="large-9 cell">
+        <ins-filter with-date-filter="" date-title="Date Period" class="hydrated">
+          <ins-filter-item name="Assigned to" options='["All", "Pending", "Completed", "Declined"]'></ins-filter-item>
+          <ins-filter-item name="Case Status" options='["All", "Pending", "Completed", "Declined"]'></ins-filter-item>
+        </ins-filter>
+      </div>
+      <div class="large-3 cell">
+        <ins-searchbar slot="ins-searchbar" placeholder="Search..."></ins-searchbar>
+      </div>
+    </div>
+    <div class="grid-x grid-padding-x">
+      <div class="large-12 cell margin-bottom-30">
+        <ins-card no-padding steady>
+          <ins-table table-stripe table-title="" page-number="1" page-size="10" total-count="3" size-options="[10, 20, 35]" button-label="Apply"
+            with-action>
+            <ins-tr>
+              <ins-th-checkbox></ins-th-checkbox>
+              <ins-th bold label="Subject"></ins-th>
+              <ins-th bold label="Name"></ins-th>
+              <ins-th bold label="Email"></ins-th>
+              <ins-th bold label="Work Phone" alignment="text-center"></ins-th>
+              <ins-th bold label="Assigned To"></ins-th>
+              <ins-th bold sort-keyword="a" label="Create Date"></ins-th>
+              <ins-th bold label="Status"></ins-th>
+            </ins-tr>
+            <ins-tr>
+              <ins-td-checkbox></ins-td-checkbox>
+              <ins-td label="Case Subject" clickable>
+                <ins-action>
+                  <ins-action-item label="View"></ins-action-item>
+                </ins-action>
+              </ins-td>
+              <ins-td label="Mabel Neal" clickable>
+                <ins-action>
+                  <ins-action-item label="View"></ins-action-item>
+                </ins-action>
+              </ins-td>
+              <ins-td label="jayde_hartmann@hotmail.com"></ins-td>
+              <ins-td label="378-595-2248" alignment="text-center"></ins-td>
+              <ins-td label="Maud Bowen"></ins-td>
+              <ins-td label="5 mins ago"></ins-td>
+              <ins-td label="Closed"></ins-td>
+            </ins-tr>
+            <ins-tr>
+              <ins-td-checkbox></ins-td-checkbox>
+              <ins-td label="Case Subject" clickable>
+                <ins-action>
+                  <ins-action-item label="View"></ins-action-item>
+                </ins-action>
+              </ins-td>
+              <ins-td label="Scott Cooper" clickable>
+                <ins-action>
+                  <ins-action-item label="View"></ins-action-item>
+                </ins-action>
+              </ins-td>
+              <ins-td label="daniel_russ@west.ca"></ins-td>
+              <ins-td label="318-996-9824" alignment="text-center"></ins-td>
+              <ins-td label="Chad Cooper"></ins-td>
+              <ins-td label="Today 07:00 am"></ins-td>
+              <ins-td label="Flagged"></ins-td>
+            </ins-tr>
+            <ins-tr>
+              <ins-td-checkbox></ins-td-checkbox>
+              <ins-td label="Case Subject" clickable>
+                <ins-action>
+                  <ins-action-item label="View"></ins-action-item>
+                </ins-action>
+              </ins-td>
+              <ins-td label="Maude Simpson" clickable>
+                <ins-action>
+                  <ins-action-item label="View"></ins-action-item>
+                </ins-action>
+              </ins-td>
+              <ins-td label="sasha_oberbrunner@yahoo.com"></ins-td>
+              <ins-td label="166-715-6102" alignment="text-center"></ins-td>
+              <ins-td label="Laura Ballard"></ins-td>
+              <ins-td label="Yesterday 05:34 pm"></ins-td>
+              <ins-td label="Open"></ins-td>
+            </ins-tr>
+          </ins-table>
+        </ins-card>
+      </div>
+    </div>
+  </div>

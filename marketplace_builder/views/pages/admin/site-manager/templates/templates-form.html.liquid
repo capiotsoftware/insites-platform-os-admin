@@ -1,0 +1,72 @@
+---
+slug: admin/site-manager/templates-form
+format: html
+layout_name: admin/empty_layout
+---
+{%- assign name = 'Templates Form' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+<div class="grid-container-full">
+    <div class="grid-x grid-padding-x">
+        <div class="large-12 cell content-blocks-container">
+            <ins-card steady>  <!-- class="templates-section"-->
+                <div class="templates-section">
+                    <div class="grid-x grid-padding-x title-container">
+                        <div class="cell large-8">
+                            <h1 class="contact-us-header">Templates Details</h1>
+                        </div>
+                        <div class="cell large-4 clearfix text-align-right">
+                            <!-- <a href="" class="copy-btn button"><i class="icon-content_copy"></i> COPY TEMPLATE</a> -->
+                            <ins-button label="COPY TEMPLATE" icon="icon-content_copy" outlined></ins-button>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-us-form">
+                        <div class="grid-x">
+                            <div class="large-6 cell">
+                                <ins-input label="Template Name" placeholder="Template Name" />
+                            </div>
+                            <div class="large-12 cell">
+                                <div class="content-container">
+                                    <label>Content</label>
+                                    <textarea data-redactor></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </ins-card>
+            <div class="templates-form-actions clearfix">
+                <div class="grid-x">
+                    <div class="large-8 cell">
+                        <div class="bottom-left-btn">
+                            <ins-button label="ARCHIVE TEMPLATE" color="negative"></ins-button>
+                        </div>
+                    </div>
+                    <div class="large-4 cell">
+                        <div class="bottom-right-btn">
+                            <ins-button label="SAVE" solid></ins-button>
+                        </div>
+                        <div class="bottom-right-btn">
+                            <ins-button onclick="returnTemplateLists()" label="CANCEL" outlined></ins-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    /**
+     * return to list of templates
+     * 
+     * onclick button
+     **/
+    function returnTemplateLists() {
+        var insRendererEl = parent.document.querySelector('ins-renderer');
+        insRendererEl.updateRoute({
+            label: 'Template',
+            link: '/admin/site-manager/templates',
+            app: true
+        });
+    }
+</script>

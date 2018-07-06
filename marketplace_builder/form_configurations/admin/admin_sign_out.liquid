@@ -1,0 +1,11 @@
+---
+name: admin_sign_out
+resource: Session
+redirect_to: admin/sessions/new
+---
+
+{% form method: 'delete' %}
+  <div class="hide">
+    {% submit 'Log Out' id="logoutButton" %}
+  </div>
+{% endform %}

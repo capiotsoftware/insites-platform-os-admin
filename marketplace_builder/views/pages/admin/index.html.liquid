@@ -1,0 +1,102 @@
+---
+slug: admin/insites
+format: html
+layout_name: admin/default
+authorization_policies:
+  - only_allowed_by_administrators
+---
+{%- assign name = 'Insites Admin' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+
+<ins-admin>
+  <ins-sidebar
+    with-sidebar-actions
+    full-logo="{{'admin/images/Insites_logo.svg' | asset_url}}"
+    icon-logo="{{'admin/images/insites_logo_icon.svg' | asset_url}}">
+
+    <ins-sidebar-item
+      link="/admin/dashboard"
+      icon="icon-dashboard"
+      label="Overview"
+      landing-page app>
+    </ins-sidebar-item>
+    
+    <ins-sidebar-item icon="icon-user-1" label="CRM" with-submenu>
+      <ins-sidebar-item link="/admin/crm/customers" label="Customers" app></ins-sidebar-item>
+      <ins-sidebar-item link="/admin/crm/cases" label="Cases" app></ins-sidebar-item>
+    </ins-sidebar-item>
+    
+    <ins-sidebar-item icon="icon-site-manager" label="Site Manager" with-submenu>
+      <ins-sidebar-item link="/admin/site-manager/pages" label="Pages" app></ins-sidebar-item>
+      <ins-sidebar-item link="/admin/site-manager/templates" label="Templates" app></ins-sidebar-item>
+      <ins-sidebar-item link="/admin/site-manager/content-blocks" label="Content Blocks" app></ins-sidebar-item>
+    </ins-sidebar-item>
+
+    <ins-sidebar-item icon="icon-reports" label="Reports" with-submenu>
+      <ins-sidebar-item link="/admin/reports/analytics" label="Analytics" app></ins-sidebar-item>
+    </ins-sidebar-item>
+
+    <ins-sidebar-item icon="icon-settings-1" label="Settings" with-submenu>
+      <ins-sidebar-item link="/admin/system/system-fields" label="System Fields" app></ins-sidebar-item>
+      <ins-sidebar-item link="/admin/system/embed-reports" label="Embed Reports" app></ins-sidebar-item>
+    </ins-sidebar-item>
+  </ins-sidebar>
+
+  <ins-content>
+    {% query_graph 'current_user', result_name: 'g' %}
+
+    <ins-header>
+      <ins-header-user
+        name="{{g.current_user.name}}"
+        logout-link="/admin/sessions/logout"
+        profile-link="/admin/sessions/my-profile">
+      </ins-header-user>
+
+      <ins-instances logo-link="{{'images/admin/logo-1@2x.png' | asset_url}}" instance="Final Sprint">
+        <ins-instances-item logo-link="{{'images/admin/logo-2@2x.png' | asset_url}}" instance-link="/" instance="Codehow"></ins-instances-item>
+        <ins-instances-item logo-link="{{'images/admin/logo-3@2x.png' | asset_url}}" instance-link="#" instance="Final Sprint" with-sub-item>
+          <ins-instances-sub-item link="/" instance="Production"></ins-instances-sub-item>
+          <ins-instances-sub-item link="/" instance="Staging"></ins-instances-sub-item>
+        </ins-instances-item>
+        <ins-instances-item logo-link="{{'images/admin/logo-4@2x.png' | asset_url}}" instance-link="/" instance="Sharkfinetworks"></ins-instances-item>
+        <ins-instances-item logo-link="{{'images/admin/logo-1@2x.png' | asset_url}}" instance-link="/" instance="Family Day Care Australia"></ins-instances-item>
+        <ins-instances-item logo-link="{{'images/admin/logo-2@2x.png' | asset_url}}" instance-link="/" instance="ABC Corp"></ins-instances-item>
+      </ins-instances>
+    </ins-header>
+    <ins-renderer link="/admin/dashboard" label="Overview" app />
+  </ins-content>
+
+  <ins-notifications>
+    <ins-notifications-item
+      event-type="Task Completed"
+      heading="Heading"
+      duration="5 mins ago"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      link="/"
+      link-label="View Task"
+      icon="icon-check"
+      status="green">
+    </ins-notifications-item>
+
+    <ins-notifications-item
+      event-type="Event Started"
+      heading="Heading"
+      duration="1 hr ago"
+      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      link="/"
+      link-label="View Event"
+      icon="icon-today"
+      status="blue">
+    </ins-notifications-item>
+
+    <ins-notifications-item
+      event-type="Event Started"
+      duration="1 hr ago"
+      icon="icon-settings"
+      status="red">
+    </ins-notifications-item>
+  </ins-notifications>
+</ins-admin>
+<script>
+
+</script>

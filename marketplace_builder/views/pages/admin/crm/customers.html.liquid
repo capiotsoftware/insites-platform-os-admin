@@ -1,0 +1,290 @@
+---
+slug: admin/crm/customers
+format: html
+layout_name: admin/empty_layout
+---
+{%- assign name = 'Customers' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+<div class="grid-x grid-padding-x margin-bottom-30">
+  <div class="large-12 cell">
+    <ins-filter>
+      <ins-filter-item name="Status" options='["All", "Pending", "Completed", "Declined"]'></ins-filter-item>
+      <ins-filter-item name="Last Activity" options='["All", "Pending", "Completed", "Declined"]'></ins-filter-item>
+    </ins-filter>
+  </div>
+</div>
+<div class="grid-x grid-padding-x">
+  <div class="medium-9 cell">
+    <ins-button label="add new company" solid onclick="addCompany()"></ins-button>
+    <ins-button label="add new contact" solid onclick="addContact()"></ins-button>
+  </div>
+  <div class="medium-3 cell">
+    <ins-searchbar placeholder="search"></ins-searchbar>
+  </div>
+</div>
+<div class="grid-x grid-padding-x margin-bottom-30">
+  <div class="large-12 cell margin-bottom-30">
+    <ins-card no-padding steady>
+      <ins-table table-stripe page-number="1" page-size="10" total-count="10" size-options="[10, 20, 35]" button-label="Apply"
+                  with-action>
+        <ins-tr>
+          <ins-th-checkbox></ins-th-checkbox>
+          <ins-th bold sort-keyword="a" label="Company"></ins-th>
+          <ins-th bold sort-keyword="b" label="Contact"></ins-th>
+          <ins-th bold sort-keyword="c" label="Email"></ins-th>
+          <ins-th bold sort-keyword="d" label="Mobile Phone"></ins-th>
+          <ins-th bold sort-keyword="e" label="Last Activity"></ins-th>
+        </ins-tr>
+        <ins-tr class="va-middle has-img">
+          <ins-td-checkbox></ins-td-checkbox>
+          <ins-td label="SP-holding" img-link="{{ 'admin/images/customer-logos/australian-unity.png' | asset_url }}" clickable onclick="viewCustomerDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="Mabel Neal" img-link="{{ 'admin/images/profile-pictures/Profile_pictures 1.jpg' | asset_url }}" clickable onclick="viewContactDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="MabelNeal@spholding.com" ellipsis></ins-td>
+          <ins-td label="907-032-8228"></ins-td>
+          <ins-td label="5 mins ago"></ins-td>
+        </ins-tr>
+        <ins-tr class="va-middle has-img">
+          <ins-td-checkbox></ins-td-checkbox>
+          <ins-td label="Cyberdyne System" img-link="{{ 'admin/images/customer-logos/atomix.png' | asset_url }}" clickable onclick="viewCustomerDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="Scott Cooper" img-link="{{ 'admin/images/profile-pictures/Profile_pictures 2.jpg' | asset_url }}" clickable onclick="viewContactDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="scootcooper@cyberdynesystems.com" ellipsis></ins-td>
+          <ins-td label="780-173-4767"></ins-td>
+          <ins-td label="Today 07:00 am"></ins-td>
+        </ins-tr>
+        <ins-tr class="va-middle has-img">
+          <ins-td-checkbox></ins-td-checkbox>
+          <ins-td label="Stark Industries" img-link="{{ 'admin/images/customer-logos/bricher.png' | asset_url }}" clickable onclick="viewCustomerDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="Maude Simpson" img-link="{{ 'admin/images/profile-pictures/Profile_pictures 3.jpg' | asset_url }}" clickable onclick="viewContactDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="maudesimpson@starkindustries.com" ellipsis></ins-td>
+          <ins-td label="241-248-3550"></ins-td>
+          <ins-td label="Yesterday 05:34 pm"></ins-td>
+        </ins-tr>
+        <ins-tr class="va-middle has-img">
+          <ins-td-checkbox></ins-td-checkbox>
+          <ins-td label="Globex Corporation" img-link="{{ 'admin/images/customer-logos/amstrongs.png' | asset_url }}" clickable onclick="viewCustomerDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="Leo Casey" img-link="{{ 'admin/images/profile-pictures/Profile_pictures 4.jpg' | asset_url }}" clickable onclick="viewContactDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="leocasey@globexcorporation.com" ellipsis></ins-td>
+          <ins-td label="454-799-5960"></ins-td>
+          <ins-td label="01-Apr-2018 12:02 am"></ins-td>
+        </ins-tr>
+        <ins-tr class="va-middle has-img">
+          <ins-td-checkbox></ins-td-checkbox>
+          <ins-td label="Funholding" img-link="{{ 'admin/images/customer-logos/air-liquide-health.png' | asset_url }}" clickable onclick="viewCustomerDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="Florence Ferguson" img-link="{{ 'admin/images/profile-pictures/Profile_pictures 5.jpg' | asset_url }}" clickable onclick="viewContactDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="florenceferguson@funholding.com" ellipsis></ins-td>
+          <ins-td label="692-816-6718"></ins-td>
+          <ins-td label="21-Apr-2018 03:23 pm"></ins-td>
+        </ins-tr>
+        <ins-tr class="va-middle has-img">
+          <ins-td-checkbox></ins-td-checkbox>
+          <ins-td label="Umbrella Corporation" img-link="{{ 'admin/images/customer-logos/aughtersonsinsurance.png' | asset_url }}" clickable onclick="viewCustomerDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="Floyd Wagner" img-link="{{ 'admin/images/profile-pictures/Profile_pictures 6.jpg' | asset_url }}" clickable onclick="viewContactDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="floydwagner@umbrellacorporation.com" ellipsis></ins-td>
+          <ins-td label="866-791-1186"></ins-td>
+          <ins-td label="03-Jun-2018 01:12 pm"></ins-td>
+        </ins-tr>
+        <ins-tr class="va-middle has-img">
+          <ins-td-checkbox></ins-td-checkbox>
+          <ins-td label="Initech" img-link="{{ 'admin/images/customer-logos/ballina-insurance.png' | asset_url }}" clickable onclick="viewCustomerDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="Zachary Holmes" img-link="{{ 'admin/images/profile-pictures/Profile_pictures 7.jpg' | asset_url }}" clickable onclick="viewContactDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="zacharyholmes@initech.com" ellipsis></ins-td>
+          <ins-td label="907-032-8228"></ins-td>
+          <ins-td label="5 mins ago"></ins-td>
+        </ins-tr>
+        <ins-tr class="va-middle has-img">
+          <ins-td-checkbox></ins-td-checkbox>
+          <ins-td label="Singletechno" img-link="{{ 'admin/images/customer-logos/finalsprint.png' | asset_url }}" clickable onclick="viewCustomerDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="Nathan Jefferson" img-link="{{ 'admin/images/profile-pictures/Profile_pictures 8.jpg' | asset_url }}" clickable onclick="viewContactDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="nathanjefferson@singletechno.com" ellipsis></ins-td>
+          <ins-td label="500-554-5688"></ins-td>
+          <ins-td label="11-May-2018 10:10 am"></ins-td>
+        </ins-tr>
+        <ins-tr class="va-middle has-img">
+          <ins-td-checkbox></ins-td-checkbox>
+          <ins-td label="Gekko & Co" img-link="{{ 'admin/images/customer-logos/traction-digital.png' | asset_url }}" clickable onclick="viewCustomerDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="Viola Powell" img-link="{{ 'admin/images/profile-pictures/Profile_pictures 9.jpg' | asset_url }}" clickable onclick="viewContactDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="violapowell@gekkoandco.com" ellipsis></ins-td>
+          <ins-td label="263-975-9085"></ins-td>
+          <ins-td label="06-Jun-2018 06:12 pm"></ins-td>
+        </ins-tr>
+        <ins-tr class="va-middle has-img">
+          <ins-td-checkbox></ins-td-checkbox>
+          <ins-td label="Fin Job" img-link="{{ 'admin/images/customer-logos/australian-insurance-services.png' | asset_url }}" clickable onclick="viewCustomerDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="Bill Shaw" img-link="{{ 'admin/images/profile-pictures/Profile_pictures 10.jpg' | asset_url }}" clickable onclick="viewContactDetails()">
+            <ins-action>
+              <ins-action-item label="View" onclick="viewCustomerDetails()"></ins-action-item>|
+              <ins-action-item label="Edit"></ins-action-item>|
+              <ins-action-item label="Archive"></ins-action-item>
+            </ins-action>
+          </ins-td>
+          <ins-td label="billshaw@finjob.com" ellipsis></ins-td>
+          <ins-td label="263-975-9085"></ins-td>
+          <ins-td label="23-Sep-2018 01:12 pm"></ins-td>
+        </ins-tr>
+      </ins-table>
+    </ins-card>
+  </div>
+<script>
+  /**
+   * View customer button
+   * 
+   * onclick button
+   **/
+  function viewCustomerDetails() {
+    var insRendererEl = parent.document.querySelector('ins-renderer');
+    insRendererEl.updateRoute({
+      label: 'Customer Details',
+      link: '/admin/crm/customer-details',
+      app: true
+    });
+  }
+
+  /* Add Contact */
+  function addContact() {
+    var insRendererEl = parent.document.querySelector('ins-renderer');
+    insRendererEl.updateRoute({
+      label: 'Add Contact',
+      link: '/admin/crm/add-contact',
+      app: true
+    });
+  }
+
+  /* Add Company */
+  function addCompany() {
+    var insRendererEl = parent.document.querySelector('ins-renderer');
+    insRendererEl.updateRoute({
+      label: 'Add Company',
+      link: '/admin/crm/add-company',
+      app: true
+    });
+  }
+
+  /**
+   * View contact details
+   * 
+   * onclick button
+   **/
+   function viewContactDetails() {
+     console.log('test');
+    var insRendererEl = parent.document.querySelector('ins-renderer');
+    insRendererEl.updateRoute({
+      label: 'Contact Details',
+      link: '/admin/crm/contact-details',
+      app: true
+    });
+  }
+</script>

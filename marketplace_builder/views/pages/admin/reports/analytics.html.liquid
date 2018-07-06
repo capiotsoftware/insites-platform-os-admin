@@ -1,0 +1,18 @@
+---
+slug: admin/reports/analytics
+format: html
+layout_name: admin/empty_layout
+---
+{%- assign name = 'Analytics' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+<div class="grid-container-full">
+  <div class="grid-x grid-padding-x margin-bottom-30">
+    <div class="large-12 cell margin-bottom-30">
+        <ins-card steady no-padding>
+          <div class="iframe-wrap">
+              <iframe src="https://datastudio.google.com/embed/u/0/reporting/1msV18gyQ-FIL0kvhB9CzB5Y_m7jdJJuB/page/xNQJ" frameborder="0"></iframe>
+          </div>
+        </ins-card>
+    </div>
+  </div>
+</div>

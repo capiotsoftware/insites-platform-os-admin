@@ -1,0 +1,160 @@
+---
+slug: admin/site-manager/pages-forms
+format: html
+layout_name: admin/empty_layout
+---
+{%- assign name = 'Pages Forms' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+<div class="grid-container-full">
+    <div class="grid-x grid-padding-x">
+        <div class="large-8 cell pages-container">
+            <ins-card steady>
+                <div class="pages-left-section">
+                    <div class="grid-x title-container">
+                        <div class="cell large-7">
+                            <h1 class="page-title">Page Details</h1>
+                        </div>
+                        <div class="cell large-5 clearfix">
+                            <div class="grid-x text-align-right">
+                                <div class="btn-title-content float-right">
+                                    <ins-button label="COPY PAGE" outlined icon="icon-content_copy" />
+                                </div>
+                                <div class="btn-title-content float-right">
+                                    <ins-button label="PREVIEW" outlined icon="icon-view" />
+                                </div>
+                                <div class="btn-title-content float-right">
+                                    <ins-button label="PUBLISH" solid />
+                                </div>
+                            </div>
+                            <!-- <a href="" class="button publish-btn">PUBLISH</a> -->
+                            
+                            <!-- <a href="" class="preview-btn button"><i class="icon-view"></i> PREVIEW</a>
+                            <a href="" class="copy-btn button"><i class="icon-content_copy"></i> COPY PAGE</a> -->
+                        </div>
+                    </div>
+                    <form class="pages-form">
+                        <div class="grid-x">
+                            <div class="cell large-12">
+                                <ins-input label="Page Title" placeholder="Page Title" />
+                            </div>
+                            <div class="cell large-12">
+                                <ins-input label="Page URL" placeholder="Page URL" />
+                            </div>
+                            <div class="cell large-12">
+                                <label>Template</label>
+                                <select class="select-template">
+                                    <option>Default Template</option>
+                                </select>
+                            </div>
+                            <div class="cell large-12">
+                                <div class="content-container">
+                                    <label>Content</label>
+                                    <textarea id="pagesArea" rows="12"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </ins-card>
+        </div>
+        <div class="large-4 cell content-blocks-container">
+            <ins-card steady>
+                <div class="columns">
+                    <h1 class="contact-us-header">Meta Data</h1>
+                    <p>
+                        Values entered below will be place in < head > section of the page as < meta > tags.    
+                    </p>
+                    <form class="meta-data-form pages-right-section">
+                        <div class="grid-x">
+                            <div class="large-12 cell">
+                                <div class="meta-title-container">
+                                    <div class="large-12 cell">
+                                        <ins-input label="Meta Title" placeholder="Meta Data" />
+                                    </div>
+                                    <span>A good title has betweem 40 - 250 character</span>
+                                </div>
+                            </div>
+                            
+                            <div class="large-12 cell">
+                                <div class="content-container">
+                                    <div class="large-12 cell">
+                                        <ins-textarea label="Meta Description" rows="12" placeholder="Meta Description" />
+                                    </div>
+                                    <span>A good meta description has betweem 130 - 350 character</span>
+                                </div>
+                            </div>
+                            <div class="large-12 cell">
+                                <div class="canonical-container">
+                                    <div class="large-12 cell">
+                                        <ins-input label="Canonical URL" placeholder="Canonical URL" />
+                                    </div>
+                                    <span>You can <a href="">learn more about canonical urls from Google</a></span>   
+                                </div>
+                            </div>    
+                        </div>
+                        
+                        <div class="grid-x search-engine-result-container">
+                            <!-- <legend>Choose Your Favorite</legend> -->
+                            <!-- <div class="cell large-12 checkbox-content">
+                                <input type="radio" class="magic-radio" id="show">
+                                <label for="show">Show this page for search engines</label>
+                            </div> -->
+                            <legend>Choose Your Favorite</legend>
+                            <div class="cell large-12 checkbox-content">
+                                <ins-checkbox label="Hide this page for search engines" value="Hide this page for search engines" />
+                                <!-- <input type="radio" class="magic-radio" id="hide">
+                                <label for="hide">Hide this page for search engines</label> -->
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>    
+            </ins-card>
+        </div>
+        <div class="pages-form-actions clearfix">
+            <div class="grid-x">
+                <div class="large-8 cell">
+                    <div class="bottom-left-btn">
+                        <ins-button label="ARCHIVE PAGE" color="negative"></ins-button>
+                    </div>
+                </div>
+                <div class="large-4 cell">
+                    <div class="bottom-right-btn">
+                        <ins-button label="PUBLISH" solid></ins-button>
+                    </div>
+                    <div class="bottom-right-btn">
+                        <ins-button onclick="returnPageLists()" label="CANCEL" outlined></ins-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    /**
+     * Redactor
+     * 
+     * @id
+     * */
+    var imageUploadHandler = function (formData, files, event) {
+        console.log(formData);
+        console.log(files);
+        console.log(event);
+    }
+    $R('#pagesArea', {
+        imageUpload: imageUploadHandler
+    });
+    /**
+     * return to list of templates
+     * 
+     * onclick button
+     **/
+    function returnPageLists() {
+        var insRendererEl = parent.document.querySelector('ins-renderer');
+        insRendererEl.updateRoute({
+            label: 'Pages',
+            link: '/admin/site-manager/pages',
+            app: true
+        });
+    }
+</script>

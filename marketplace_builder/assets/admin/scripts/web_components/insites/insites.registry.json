@@ -1,0 +1,130 @@
+{
+  "namespace": "insites",
+  "fsNamespace": "insites",
+  "loader": "../insites.js",
+  "global": "insites.global.js",
+  "core": "insites.nfngp6yp.js",
+  "corePolyfilled": "insites.b8lj2fhc.js",
+  "components": {
+    "ins-action": {
+      "$": "rrnp588e"
+    },
+    "ins-action-item": {
+      "$": "2hubu5tr"
+    },
+    "ins-admin": {
+      "$": "9i2ytoxc"
+    },
+    "ins-backdrop": {
+      "$": "0vkegbe6"
+    },
+    "ins-bar-chart": {
+      "$": "eyrvz24d"
+    },
+    "ins-button": {
+      "$": "ihgzc4og"
+    },
+    "ins-card": {
+      "$": "xz2ennys"
+    },
+    "ins-checkbox": {
+      "$": "tzekjbil"
+    },
+    "ins-content": {
+      "$": "690hfpgm"
+    },
+    "ins-datastudiourl": {
+      "$": "w7fbf9ut"
+    },
+    "ins-datepicker": {
+      "$": "iaqtqhgs"
+    },
+    "ins-dropdown": {
+      "$": "h9r705vy"
+    },
+    "ins-filter": {
+      "$": "wtava4jc"
+    },
+    "ins-filter-item": {
+      "$": "quonkecz"
+    },
+    "ins-header": {
+      "$": "u4nds1ij"
+    },
+    "ins-header-user": {
+      "$": "84qshejr"
+    },
+    "ins-image-picker": {
+      "$": "rxgsfa1v"
+    },
+    "ins-input": {
+      "$": "aouzzncr"
+    },
+    "ins-instances": {
+      "$": "k6ki1bof"
+    },
+    "ins-instances-item": {
+      "$": "kdjsfqr2"
+    },
+    "ins-instances-sub-item": {
+      "$": "wmodidcz"
+    },
+    "ins-line-chart": {
+      "$": "stmksjze"
+    },
+    "ins-notifications": {
+      "$": "zetxqqcs"
+    },
+    "ins-notifications-item": {
+      "$": "ab2robta"
+    },
+    "ins-radio": {
+      "$": "nfltioia"
+    },
+    "ins-renderer": {
+      "$": "zdyyuzdy"
+    },
+    "ins-searchbar": {
+      "$": "k6ki1bof"
+    },
+    "ins-sidebar": {
+      "$": "c8ee9cyv"
+    },
+    "ins-sidebar-item": {
+      "$": "1amsw6tw"
+    },
+    "ins-sparkline": {
+      "$": "mkfyuxl6"
+    },
+    "ins-table": {
+      "$": "h9r705vy"
+    },
+    "ins-td": {
+      "$": "rq5pk567"
+    },
+    "ins-td-checkbox": {
+      "$": "jn9ib7v4"
+    },
+    "ins-textarea": {
+      "$": "xi2wssi7"
+    },
+    "ins-th": {
+      "$": "mba5tdjw"
+    },
+    "ins-th-action": {
+      "$": "egkohzeb"
+    },
+    "ins-th-checkbox": {
+      "$": "njzekc4z"
+    },
+    "ins-toggle-switch": {
+      "$": "vd3q53su"
+    },
+    "ins-tr": {
+      "$": "nqvl7rwi"
+    },
+    "ins-version": {
+      "$": "2fdp2m7z"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+---
+slug: admin/site-manager/content-blocks-form
+format: html
+layout_name: admin/empty_layout
+---
+
+{%- assign name = 'Content Blocks Form' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+
+<div class="grid-container-full">
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 cell content-blocks-container">
+      <ins-card>
+        <section class="content-block-section">
+          <div class="columns">
+            <h1 class="contact-us-header">Content Block Details</h1>
+            <form class="contact-us-form">
+              <label>Name</label>
+              <input type="text" placeholder="Content Blocks Name">
+
+              <label>Script</label>
+              <input type="email" placeholder="">
+              <div class="cell large-12 text-right">
+                <!-- <a href="" class="button copy-script-btn"><i class="icon-notepad"></i> COPY SCRIPT</a> -->
+                <ins-button label="COPY TEMPLATE" color="blue" outlined onclick="addNewpage()" icon="icon-content_copy"></ins-button>
+              </div>
+              <div class="content-container">
+                <label>Content</label>
+                <textarea id="contentBlockR"></textarea>
+              </div>
+
+            </form>
+          </div>
+        </section>
+      </ins-card>
+
+      <div class="content-block-form-actions clearfix">
+        <!-- <a href="" class="delete-href">ARCHIVE CONTENT BLOCK</a>
+        <a href="" class="save-btn button">SAVE CONTENT</a>
+        <a href="" class="cancel-btn button">CANCEL</a> -->
+        
+        <div class="grid-x">
+          <div class="large-6 cell">
+            <ins-button label="ARCHIVE CONTENT BLOCK" color="negative"></ins-button>
+          </div>
+          <div class="large-6 cell text-right">
+            <ins-button label="CANCEL" color="blue" outlined onclick="returnContentBlocksLists()"></ins-button>
+            <ins-button label="SAVE" color="blue" solid></ins-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // var contentBlockREl = document.getElementById('contentBlockR');
+  $R('#contentBlockR');
+  function returnContentBlocksLists() {
+    var insRendererEl = parent.document.querySelector('ins-renderer');
+    insRendererEl.updateRoute({
+      label: 'Content Blocks',
+      link: '/admin/site-manager/content-blocks',
+      app: true
+    });
+  }
+</script>

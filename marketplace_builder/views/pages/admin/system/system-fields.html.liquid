@@ -1,0 +1,182 @@
+---
+slug: admin/system/system-fields
+format: html
+layout_name: admin/empty_layout
+---
+{%- assign name = 'System Fields' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+<div class="grid-container-full">
+    <div class="grid-x grid-padding-x margin-bottom-30">
+      <div class="large-12 cell">
+        <ins-card steady id="system-fields">
+          <div class="grid-x grid-padding-x">
+              <div class="large-3 medium-4 cell">
+                <strong class="subHeader">Company Type</strong>
+                <div class="clearfix">
+                  <div class="w-79 float-left">
+                      <ins-input value="" placeholder="Add New Company Type"></ins-input>
+                  </div>
+                  <div class="w-20 text-align-right float-right">
+                      <ins-button label="ADD" outlined></ins-button>
+                  </div>
+                </div>
+                <div class="scroll-wrap">
+                  <ins-table table-stripe no-pagination>
+                      <ins-tr class="hide">
+                        <ins-td label="">
+                        </ins-td>
+                      </ins-tr>
+                      <ins-tr>
+                        <ins-td label="Partner">
+                          <ins-action>
+                            <ins-action-item label="Edit"></ins-action-item>|
+                            <ins-action-item label="Delete"></ins-action-item>
+                          </ins-action>
+                        </ins-td>
+                      </ins-tr>
+                      <ins-tr>
+                      <ins-td label="Customer">
+                        <ins-action>
+                          <ins-action-item label="Edit"></ins-action-item>|
+                          <ins-action-item label="Delete"></ins-action-item>
+                        </ins-action>
+                      </ins-td>
+                      </ins-tr>
+                      <ins-tr>
+                        <ins-td label="Type 1">
+                          <ins-action>
+                            <ins-action-item label="Edit"></ins-action-item>|
+                            <ins-action-item label="Delete"></ins-action-item>
+                          </ins-action>
+                        </ins-td>
+                      </ins-tr>
+                      <ins-tr>
+                        <ins-td label="Type 2">
+                          <ins-action>
+                            <ins-action-item label="Edit"></ins-action-item>|
+                            <ins-action-item label="Delete"></ins-action-item>
+                          </ins-action>
+                        </ins-td>
+                      </ins-tr>
+                    </ins-table>
+                </div>
+              </div>
+              <div class="large-3 medium-4 cell">
+                <strong class="subHeader">Industry Type</strong>
+                <div class="clearfix">
+                  <div class="w-79 float-left">
+                      <ins-input value="" placeholder="Add New Industry Type"></ins-input>
+                  </div>
+                  <div class="w-20 text-align-right float-right">
+                      <ins-button label="ADD" outlined></ins-button>
+                  </div>
+                </div>
+                <div class="scroll-wrap">
+                    <ins-table table-stripe no-pagination>
+                        <!-- empty td -->
+                        <ins-tr class="hide">
+                          <ins-td label="">
+                          </ins-td>
+                        </ins-tr>
+                        <ins-tr>
+                          <ins-td label="Design Agency">
+                            <ins-action>
+                              <ins-action-item label="Edit"></ins-action-item>|
+                              <ins-action-item label="Delete"></ins-action-item>
+                            </ins-action>
+                          </ins-td>
+                        </ins-tr>
+                        <ins-tr>
+                        <ins-td label="Automotive">
+                          <ins-action>
+                            <ins-action-item label="Edit"></ins-action-item>|
+                            <ins-action-item label="Delete"></ins-action-item>
+                          </ins-action>
+                        </ins-td>
+                        </ins-tr>
+                        <ins-tr>
+                          <ins-td label="Beauty">
+                            <ins-action>
+                              <ins-action-item label="Edit"></ins-action-item>|
+                              <ins-action-item label="Delete"></ins-action-item>
+                            </ins-action>
+                          </ins-td>
+                        </ins-tr>
+                        <ins-tr>
+                          <ins-td label="Health Care">
+                            <ins-action>
+                              <ins-action-item label="Edit"></ins-action-item>|
+                              <ins-action-item label="Delete"></ins-action-item>
+                            </ins-action>
+                          </ins-td>
+                        </ins-tr>
+                        <ins-tr>
+                            <ins-td label="Real State">
+                              <ins-action>
+                                <ins-action-item label="Edit"></ins-action-item>|
+                                <ins-action-item label="Delete"></ins-action-item>
+                              </ins-action>
+                            </ins-td>
+                          </ins-tr>
+                      </ins-table>
+                  </div>
+              </div>
+              <div class="large-3 medium-4 cell">
+                <strong class="subHeader">Contact Type</strong>
+                <div class="clearfix">
+                  <div class="w-79 float-left">
+                      <ins-input value="" placeholder="Add New Contact Type"></ins-input>
+                  </div>
+                  <div class="w-20 text-align-right float-right">
+                      <ins-button label="ADD" outlined></ins-button>
+                  </div>
+                </div>
+                <div class="scroll-wrap">
+                    <ins-table table-stripe no-pagination>
+                      <!-- empty td -->
+                      <ins-tr class="hide">
+                        <ins-td label="">
+                        </ins-td>
+                      </ins-tr>
+                      <ins-tr>
+                        <ins-td label="Primary">
+                          <ins-action>
+                            <ins-action-item label="Edit"></ins-action-item>|
+                            <ins-action-item label="Delete"></ins-action-item>
+                          </ins-action>
+                        </ins-td>
+                      </ins-tr>
+                      <ins-tr>
+                      <ins-td label="Secondary">
+                        <ins-action>
+                          <ins-action-item label="Edit"></ins-action-item>|
+                          <ins-action-item label="Delete"></ins-action-item>
+                        </ins-action>
+                      </ins-td>
+                      </ins-tr>
+                      <ins-tr>
+                        <ins-td label="Type 1">
+                          <ins-action>
+                            <ins-action-item label="Edit"></ins-action-item>|
+                            <ins-action-item label="Delete"></ins-action-item>
+                          </ins-action>
+                        </ins-td>
+                      </ins-tr>
+                      <ins-tr>
+                        <ins-td label="Type 2">
+                          <ins-action>
+                            <ins-action-item label="Edit"></ins-action-item>|
+                            <ins-action-item label="Delete"></ins-action-item>
+                          </ins-action>
+                        </ins-td>
+                      </ins-tr>
+                    </ins-table>
+                  </div>
+              </div>
+          </div>
+        </ins-card>
+      </div>
+    </div>
+</div>
+
+<ins-version value="PLATFORM VERSION: V1.0.0"></ins-version>

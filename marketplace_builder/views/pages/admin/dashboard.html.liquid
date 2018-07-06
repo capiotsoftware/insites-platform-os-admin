@@ -1,0 +1,201 @@
+--- 
+slug: admin/dashboard
+format: html
+layout_name: admin/empty_layout
+---
+{%- assign name = 'Dashboard' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+
+<div class="grid-container-full">
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 small-12 medium-12 cell" style="margin-bottom:30px">
+      <ins-filter with-date-filter date-title="Date Period">
+        <ins-filter-item name="Status" options='["All Status", "Pending", "Completed", "Declined"]'>
+        </ins-filter-item>
+      </ins-filter>
+    </div>
+    <div class="large-3 cell margin-bottom-30">
+      <ins-card>
+        <ins-sparkline id="sessions" icon="icon-clock" name="Sessions" value="3.80K" percentage="12" description="From previous year"
+          movement="1">
+        </ins-sparkline>
+      </ins-card>
+    </div>
+    <div class="large-3 cell margin-bottom-30">
+      <ins-card>
+        <ins-sparkline id="users" icon="icon-user-1" name="Users" value="720" percentage="7" description="From previous year" movement="0">
+        </ins-sparkline>
+      </ins-card>
+    </div>
+    <div class="large-3 cell margin-bottom-30">
+      <ins-card>
+        <ins-sparkline id="bounceRate" icon="icon-analytic-1" name="Bounce Rate" value="86%" percentage="12" description="From previous year"
+          movement="1">
+        </ins-sparkline>
+      </ins-card>
+    </div>
+    <div class="large-3 cell margin-bottom-30">
+      <ins-card>
+        <ins-sparkline id="goals" icon="icon-goal-1" name="Goals" value="2.5K" percentage="7" description="From previous year" movement="0">
+        </ins-sparkline>
+      </ins-card>
+    </div>
+    <div class="large-12 cell margin-bottom-30">
+      <ins-card>
+        <ins-line-chart id="lineChart" name="Sessions"></ins-line-chart>
+      </ins-card>
+    </div>
+    <div class="large-6 cell margin-bottom-30">
+      <ins-card no-padding steady>
+        <ins-table table-stripe table-title="Table" page-number="1" page-size="10" total-count="3" size-options="[10, 20, 35]" button-label="Apply"
+          with-action>
+          <ins-searchbar slot="ins-searchbar" placeholder="Search..."></ins-searchbar>
+          <ins-tr>
+            <ins-th-checkbox></ins-th-checkbox>
+            <ins-th bold sort-keyword="a" label="Default Column"></ins-th>
+            <ins-th bold sort-keyword="b" label="Number Column" alignment="text-right"></ins-th>
+            <ins-th bold sort-keyword="c" label="Date Column" alignment="text-center"></ins-th>
+            <ins-th bold sort-keyword="d" label="Currency Column" alignment="text-right"></ins-th>
+          </ins-tr>
+          <ins-tr>
+            <ins-td-checkbox></ins-td-checkbox>
+            <ins-td label="Normal Text">
+              <ins-action>
+                <ins-action-item label="View"></ins-action-item>|
+                <ins-action-item label="Edit"></ins-action-item>|
+                <ins-action-item label="Preview" icon="icon-external-link"></ins-action-item>|
+                <ins-action-item label="Delete"></ins-action-item>
+              </ins-action>
+            </ins-td>
+            <ins-td label="388212" alignment="text-right"></ins-td>
+            <ins-td label="31-Dec-2018" alignment="text-center"></ins-td>
+            <ins-td label="$10.00" alignment="text-right"></ins-td>
+          </ins-tr>
+          <ins-tr>
+            <ins-td-checkbox></ins-td-checkbox>
+            <ins-td label="Normal Text">
+              <ins-action>
+                <ins-action-item label="View"></ins-action-item>|
+                <ins-action-item label="Edit"></ins-action-item>|
+                <ins-action-item label="Preview" icon="icon-external-link"></ins-action-item>|
+                <ins-action-item label="Delete"></ins-action-item>
+              </ins-action>
+            </ins-td>
+            <ins-td label="367478" alignment="text-right"></ins-td>
+            <ins-td label="06-Dec-2018" alignment="text-center"></ins-td>
+            <ins-td label="$10.00" alignment="text-right"></ins-td>
+          </ins-tr>
+          <ins-tr>
+            <ins-td-checkbox></ins-td-checkbox>
+            <ins-td label="Text link" clickable>
+              <ins-action>
+                <ins-action-item label="View"></ins-action-item>|
+                <ins-action-item label="Edit"></ins-action-item>|
+                <ins-action-item label="Preview" icon="icon-external-link"></ins-action-item>|
+                <ins-action-item label="Delete"></ins-action-item>
+              </ins-action>
+            </ins-td>
+            <ins-td label="827728" alignment="text-right"></ins-td>
+            <ins-td label="25-Dec-2018" alignment="text-center"></ins-td>
+            <ins-td label="$10.00" alignment="text-right"></ins-td>
+          </ins-tr>
+          <ins-tr>
+            <ins-td-checkbox></ins-td-checkbox>
+            <ins-td label="Selected Text">
+              <ins-action>
+                <ins-action-item label="View"></ins-action-item>|
+                <ins-action-item label="Edit"></ins-action-item>|
+                <ins-action-item label="Preview" icon="icon-external-link"></ins-action-item>|
+                <ins-action-item label="Delete"></ins-action-item>
+              </ins-action>
+            </ins-td>
+            <ins-td label="664783" alignment="text-right"></ins-td>
+            <ins-td label="20-Dec-2018" alignment="text-center"></ins-td>
+            <ins-td label="$10.00" alignment="text-right"></ins-td>
+          </ins-tr>
+        </ins-table>
+      </ins-card>
+    </div>
+    <div class="large-6 cell margin-bottom-30">
+      <ins-card>
+        <ins-bar-chart id="barChart" name="Column Chart"></ins-bar-chart>
+      </ins-card>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  var sparkLineSampleData = [["2017-12-18", 13], ["2017-12-25", 0], ["2018-01-01", 0], ["2018-01-08", 8], ["2018-01-15", 5], ["2018-01-22", 2], ["2018-01-29", 1], ["2018-02-05", 1], ["2018-02-12", 1], ["2018-02-19", 0], ["2018-02-26", 1], ["2018-03-05", 0], ["2018-03-12", 0], ["2018-03-19", 2], ["2018-03-26", 1], ["2018-04-02", 11], ["2018-04-09", 2], ["2018-04-16", 2], ["2018-04-23", 0], ["2018-04-30", 0], ["2018-05-07", 0], ["2018-05-14", 0], ["2018-05-21", 1], ["2018-05-28", 0]];
+
+  var lineChartSampleData = [
+    {
+      name: "Visitor Sessions",
+      data: [["2018-01-10", 3], ["2018-01-11", 24], ["2018-01-12", 1], ["2018-01-13", 5], ["2018-01-14", 28], ["2018-01-15", 0], ["2018-01-16", 12], ["2018-01-17", 0], ["2018-01-18", 2], ["2018-03-29", 10], ["2018-03-30", 4], ["2018-03-31", 2]],
+      color: "#3EB98C"
+    },
+    {
+      name: "Events",
+      data: [["2017-05-29", 5], ["2017-06-05", 2], ["2017-06-12", 18], ["2017-06-19", 3], ["2017-06-26", 15], ["2017-07-03", 13], ["2017-07-10", 8], ["2017-07-24", 25], ["2017-07-31", 20], ["2017-08-07", 14], ["2017-08-14", 27], ["2017-09-07", 14]],
+      color: "#2BBAD9"
+    }
+  ];
+  var lineChartCategories = ['Jan 17', 'Feb 17', 'Mar 17', 'Apr 17', 'May 17', 'Jun 17', 'Jul 17', 'Aug 17', 'Sep 17', 'Oct 17', 'Nov 17', 'Dec 17'];
+
+  var barChartSampledata = [{
+    name: "Column 1",
+    data: [["2018-01-10", 3], ["2018-01-11", 24], ["2018-01-12", 1], ["2018-01-13", 5]],
+    color: "#3EB98C"
+  },
+  {
+    name: "Column 2",
+    data: [["2017-05-29", 5], ["2017-06-05", 2], ["2017-06-12", 18], ["2017-06-19", 3]],
+    color: "#2BBAD9"
+  }];
+  var barChartCategories = ['Jan - Apr 17', 'May - Jul 17', 'Aug - Oct 17', 'Sept - Dec 17'];
+
+  var rawInsThEls = document.querySelectorAll('ins-table');
+  var insThEls = [...rawInsThEls];
+
+  insThEls.forEach(function (insTh) {
+    insTh.addEventListener('pageState', function (e) {
+      console.log(e.detail);
+    })
+  });
+
+  function eventHandler(event) {
+    console.log('event handled', event);
+  }
+
+  $('#myTable')
+    .on('onAction', eventHandler)
+    .on('onPageChange', eventHandler)
+    .on('onPageSizeChange', eventHandler);
+
+  $('ins-th').on('onSort', eventHandler);
+  $('ins-td').on('onClick', eventHandler);
+  $('ins-td-action-item').on('onClick', eventHandler);
+
+  setTimeout(function () {
+    var sparklineChartSessions = document.getElementById('sessions');
+    sparklineChartSessions.chartData = sparkLineSampleData;
+
+    var sparklineChartUsers = document.getElementById('users');
+    sparklineChartUsers.chartData = sparkLineSampleData;
+
+    var sparklineChartBounceRate = document.getElementById('bounceRate');
+    sparklineChartBounceRate.chartData = sparkLineSampleData;
+
+    var sparklineChartGoals = document.getElementById('goals');
+    sparklineChartGoals.chartData = sparkLineSampleData;
+
+    var lineChart = document.getElementById('lineChart');
+    lineChart.chartData = lineChartSampleData;
+    lineChart.categories = lineChartCategories;
+
+    var barChart = document.getElementById('barChart');
+    barChart.chartData = barChartSampledata;
+    barChart.categories = barChartCategories;
+
+  }, 1000);
+</script>

@@ -1,0 +1,148 @@
+---
+slug: admin/site-manager/pages
+format: html
+layout_name: admin/empty_layout
+---
+{%- assign name = 'Pages' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+
+
+<div class="grid-container-full">
+	<div class="grid-x grid-padding-x">
+		<!-- <div class="large-12 cell content-blocks-container">
+			<ins-card steady>
+				<h2 class="title-page">Welcome to Pages</h2>
+				<p>Pages display your site's content online. Each page an assigned template, so you don't have the header, footer or other common elements each time you create new content.</p>
+			</ins-card>
+		</div> -->
+		<!-- 
+      <div class="grid-container box-container">
+        <div class="grid-x align-center">
+            <h2 class="title-page">You don't have any pages yet.</h2>
+            <span>Would you like to create your first page?</span>
+            <a href="/admin/site-manager/pages-forms" class="button btn">ADD NEW PAGE</a>
+        </div>
+      </div>
+    -->
+		<div class="large-12 cell pages-table-container">
+			<div class="large-12 small-12 medium-12 cell" style="margin-bottom: 25px">
+				<ins-filter with-date-filter date-title="Last Modified">
+					<ins-filter-item
+            name="Status"
+            options='["All Status", "Pending", "Completed", "Declined"]'>
+					</ins-filter-item>
+				</ins-filter>
+			</div>
+			<div class="large-12 small-12 medium-12 cell" style="margin-bottom: 25px">
+				<!-- <button type="button" class="button btn" onclick="addNewpage()">ADD NEW PAGE</button> -->
+				<ins-button label="ADD NEW PAGE" solid onclick="addNewpage()" />
+			</div>
+
+			<ins-card no-padding steady>
+				<ins-table table-stripe page-number="1" page-size="10" total-count="3" size-options="[10, 20, 35]" button-label="APPLY"
+				with-action>
+					<!-- <ins-searchbar slot="ins-searchbar" placeholder="Search..."></ins-searchbar> -->
+					<ins-tr>
+						<ins-th-checkbox></ins-th-checkbox>
+						<ins-th bold sort-keyword="a" label="Title"></ins-th>
+						<ins-th bold sort-keyword="b" label="URL"></ins-th>
+						<ins-th bold sort-keyword="c" label="Template"></ins-th>
+						<ins-th bold sort-keyword="c" label="Last Modified"></ins-th>
+						<ins-th bold sort-keyword="c" label="Status"></ins-th>
+					</ins-tr>
+					<ins-tr>
+						<ins-td-checkbox></ins-td-checkbox>
+						<ins-td label="Contact Us" clickable>
+						<ins-action>
+							<ins-action-item onclick="editPage()" label="Edit" app></ins-action-item>|
+							<ins-action-item label="Unpublish"></ins-action-item>|
+							<ins-action-item label="Preview"></ins-action-item>
+							<ins-action-item label="Archive"></ins-action-item>
+						</ins-action>
+						</ins-td>
+						<ins-td label="/contact"></ins-td>
+						<ins-td label="Default Template"></ins-td>
+						<ins-td label="Today 11:35am"></ins-td>
+						<ins-td label="Published"></ins-td>
+					</ins-tr>
+					<ins-tr>
+						<ins-td-checkbox></ins-td-checkbox>
+						<ins-td label="About Us" clickable>
+						<ins-action>
+							<ins-action-item onclick="editPage()" label="Edit" app></ins-action-item>|
+							<ins-action-item label="Unpublish"></ins-action-item>|
+							<ins-action-item label="Preview"></ins-action-item>
+							<ins-action-item label="Archive"></ins-action-item>
+						</ins-action>
+						</ins-td>
+						<ins-td label="/about"></ins-td>
+						<ins-td label="System Template"></ins-td>
+						<ins-td label="Yesterday 10:00pm"></ins-td>
+						<ins-td label="Hidden"></ins-td>
+					</ins-tr>
+					<ins-tr>
+						<ins-td-checkbox></ins-td-checkbox>
+						<ins-td label="Meet A Team" clickable>
+						<ins-action>
+							<ins-action-item onclick="editPage()" label="Edit" app></ins-action-item>|
+							<ins-action-item label="Unpublish"></ins-action-item>|
+							<ins-action-item label="Preview"></ins-action-item>
+							<ins-action-item label="Archive"></ins-action-item>
+						</ins-action>
+						</ins-td>
+						<ins-td label="/about/meet-a-team"></ins-td>
+						<ins-td label="Default Template"></ins-td>
+						<ins-td label="25-May-2018 - 09:00pm"></ins-td>
+						<ins-td label="Hidden"></ins-td>
+					</ins-tr>
+					<ins-tr>
+						<ins-td-checkbox></ins-td-checkbox>
+						<ins-td label="Disclaimer" clickable>
+						<ins-action>
+							<ins-action-item onclick="editPage()" label="Edit" app></ins-action-item>|
+							<ins-action-item label="Unpublish"></ins-action-item>|
+							<ins-action-item label="Preview"></ins-action-item>
+							<ins-action-item label="Archive"></ins-action-item>
+						</ins-action>
+						</ins-td>
+						<ins-td label="/_System/Includes/vse-v2/others/finance/"></ins-td>
+						<ins-td label="3System Template"></ins-td>
+						<ins-td label="25-May-2018 - 11:00pm"></ins-td>
+						<ins-td label="Published"></ins-td>
+					</ins-tr>
+				</ins-table>
+			</ins-card>
+		</div>
+	</div>
+</div>
+
+<script>
+	/**
+	 * Add new page button
+	 * 
+	 * onclick button
+	 **/
+	function addNewpage() {
+		var insRendererEl = parent.document.querySelector('ins-renderer');
+		insRendererEl.updateRoute({
+			label: 'Add New Page',
+			link: '/admin/site-manager/pages-forms',
+			app: true
+		});
+	}
+
+	/**
+	 * Edit Pages
+	 * 
+	 * Table list pages
+	 * */
+	function editPage() {
+		let _insRendererEl = parent.document.querySelector('ins-renderer');
+
+		_insRendererEl.updateRoute({
+			label: 'Edit Page',
+			link: '/admin/site-manager/pages-forms',
+			app: true
+		});
+	}
+</script>

@@ -1,0 +1,296 @@
+---
+slug: admin/crm/customer-details
+format: html
+layout_name: admin/empty_layout
+---
+{%- assign name = 'Customer Details' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+
+<div class="grid-container-full">
+    <div class="grid-x grid-padding-x">
+        <div class="large-8 cell customer-details-container">
+            <ins-card steady>
+                <div class="grid-x">
+                    <div class="large-6 cell">
+                        <div class="profile-pic-container">
+                            <img src="https://pbs.twimg.com/profile_images/732634911761260544/OxHbNdTF.jpg" />
+                            <label>Gekko & Co</label>
+                        </div>
+                    </div>
+                    <div class="large-6 cell">
+                        <div class="social-media-icon-container">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-x details-container">
+                    <div class="large-6 cell">       
+                        <ins-card no-padding steady>
+                            <table class="customer-details-table">
+                                <tbody>
+                                    <tr>
+                                        <td class="fw-600">Customer ID</td>
+                                        <td>377467827</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-600">Phone</td>
+                                        <td>(02) 123 123 123</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-600">Website</td>
+                                        <td>www.gekkoandco.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-600">Assigned To</td>
+                                        <td>Shane McGeorge</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-600">Company Type</td>
+                                        <td>Partner</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-600">Industry Type</td>
+                                        <td>Services</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </ins-card>
+                    </div>
+                    <div class="large-6 cell customer-right-container">
+                        <div class="map-container clearfix">
+                            <img src="{{ 'admin/images/map.jpg' | asset_url }}" />
+                        </div>
+                        <p>8 Jackson Drive, mascot NSW 2020, Australia</p>
+                        <span><i class="icon-globals"></i> Get Directions</span>
+                    </div>
+
+                    <div class="large-12 cell notes-container">
+                        <ins-textarea label="Notes" rows=12 placeholder="Ribeye jowl ground round pancetta ham. Capicola porchetta ground round tenderloin picanha. Pork fatback ball tip meatball alcatra, sirloin beef ribs sausage buffalo prosciutto strip steak shank. Ribeye jowl ground round pancetta ham. Capicola porchetta ground round tenderloin picanha. Pork fatback ball tip meatball alcatra, sirloin beef ribs sausage buffalo prosciutto strip steak shank."></ins-textarea>
+                    </div>
+                    <div class="cell large-12 text-right">
+                        <ins-button label="EDIT COMPANY" outlined onclick="editCompany()"></ins-button>
+                    </div>
+                </div>
+            </ins-card>
+        </div>
+
+        <div class="large-4 cell">
+            <ins-card steady>
+                <div class="grid-x customer-details-title-container">
+                    <div class="large-8 cell">
+                        <h1 class="customer-details-title">Timeline</h1>
+                    </div>
+                    <div class="large-4 cell text-right">
+                        <ins-button label="ADD ACTIVITY" outlined></ins-button>
+                    </div>
+                    <div class="large-12 cell activity-container">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill-rule="evenodd" clip-rule="evenodd"><path d="M9 21h-9v-2h9v2zm6.695-2.88l-3.314-3.13-1.381 1.47 4.699 4.54 8.301-8.441-1.384-1.439-6.921 7zm-6.695-1.144h-9v-2h9v2zm8-3.976h-17v-2h17v2zm7-4h-24v-2h24v2zm0-4h-24v-2h24v2z"/></svg>
+                                </div>
+                                <div class="timeline-content right">
+                                    <div class="grid-x">
+                                        <div class="large-5 cell text-center">
+                                            <p class="timeline-content-date">Today 02:43 pm</p>
+                                        </div>
+                                        <div class="large-7 cell">
+                                            <p>ZURB style guide was solidified and named Foundation. It is being used internally on all client projects and ZURB sites and apps.</p>
+                                        </div>
+                                    </div>       
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/></svg>
+                                </div>
+                                <div class="timeline-content right">
+                                    <div class="grid-x">
+                                        <div class="large-5 cell text-center">
+                                            <p class="timeline-content-date">Yesterday 02:43 pm</p>
+                                        </div>
+                                        <div class="large-7 cell">
+                                            <p>ZURB style guide was solidified and named Foundation. It is being used internally on all client projects and ZURB sites and apps.</p>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 9c1.361-5.928 8-7 8-7v-2l4 3.982-4 4.018v-2s-5.102-.104-8 3zm5 1h-10v1h10v-1zm3 .835v2.708c0 4.107-6 2.457-6 2.457s1.518 6-2.638 6h-7.362v-20h10.741c1.176-.758 2.35-1.242 3.259-1.541v-.459h-16v24h10.189c3.163 0 9.811-7.223 9.811-9.614v-5.561l-2 2.01zm-13 3.165h10v-1h-10v1zm3.609-7h-3.609v1h3.266l.343-1z"/></svg>
+                                </div>
+                                <div class="timeline-content right">
+                                    <div class="grid-x">
+                                        <div class="large-5 cell text-center">
+                                            <p class="timeline-content-date">25-May-2018 02:43 pm</p>
+                                        </div>
+                                        <div class="large-7 cell">
+                                            <p>ZURB style guide was solidified and named Foundation. It is being used internally on all client projects and ZURB sites and apps.</p>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 11.5c0 3.613-2.951 6.5-6.475 6.5-2.154 0-4.101-1.214-5.338-3h-2.882l-1.046-1.013-1.302 1.019-1.362-1.075-1.407 1.081-4.188-3.448 3.346-3.564h8.841c1.145-1.683 3.104-3 5.339-3 3.497 0 6.474 2.866 6.474 6.5zm-10.691 1.5c.98 1.671 2.277 3 4.217 3 2.412 0 4.474-1.986 4.474-4.5 0-2.498-2.044-4.5-4.479-4.5-2.055 0-3.292 1.433-4.212 3h-9.097l-1.293 1.376 1.312 1.081 1.38-1.061 1.351 1.066 1.437-1.123 1.715 1.661h3.195zm5.691-3.125c.828 0 1.5.672 1.5 1.5s-.672 1.5-1.5 1.5-1.5-.672-1.5-1.5.672-1.5 1.5-1.5z"/></svg>
+                                </div>
+                                <div class="timeline-content right">
+                                    <div class="grid-x">
+                                        <div class="large-5 cell text-center">
+                                            <p class="timeline-content-date">30-Apr-2018 02:43 pm</p>
+                                        </div>
+                                        <div class="large-7 cell">
+                                            <p>ZURB style guide was solidified and named Foundation. It is being used internally on all client projects and ZURB sites and apps.</p>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 23v-11c-4.036 0-6 2.715-6 5.5 0 2.807 1.995 5.5 6 5.5zm18-5.5c0-2.785-1.964-5.5-6-5.5v11c4.005 0 6-2.693 6-5.5zm-12-13.522c-3.879-.008-6.861 2.349-7.743 6.195-.751.145-1.479.385-2.161.716.629-5.501 4.319-9.889 9.904-9.889 5.589 0 9.29 4.389 9.916 9.896-.684-.334-1.415-.575-2.169-.721-.881-3.85-3.867-6.205-7.747-6.197z"/></svg>
+                                </div>
+                                <div class="timeline-content right">
+                                    <div class="grid-x">
+                                        <div class="large-5 cell text-center">
+                                            <p class="timeline-content-date">30-Apr-2018 02:43 pm</p>
+                                        </div>
+                                        <div class="large-7 cell">
+                                            <p>ZURB style guide was solidified and named Foundation. It is being used internally on all client projects and ZURB sites and apps.</p>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            
+                        </div>                                  
+                    </div>
+                </div>
+            </ins-card>
+        </div>
+
+        <div class="customer-form-actions clearfix">
+            <div class="grid-x">
+                <div class="large-12 cell">
+                    <div class="bottom-left-btn">
+                        <ins-button label="ADD NEW COMPANY" solid onclick="addCompany()"></ins-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="large-12 cell contact-customer-container">
+            <ins-card no-padding steady>
+                <ins-table table-stripe table-title="Contacts" page-number="1" page-size="10" total-count="3" size-options="[10, 20, 35]" button-label="APPLY"
+                with-action>
+                    <ins-searchbar slot="ins-searchbar" placeholder="Search..."></ins-searchbar>
+                    <ins-tr>
+                        <ins-th-checkbox></ins-th-checkbox>
+                        <ins-th bold sort-keyword="a" label="Name"></ins-th>
+                        <ins-th bold sort-keyword="c" label="Contact Type"></ins-th>
+                        <ins-th bold sort-keyword="c" label="Phone"></ins-th>
+                        <ins-th bold sort-keyword="c" label="Mobile"></ins-th>
+                        <ins-th bold sort-keyword="c" label="Email Address"></ins-th>
+                    </ins-tr>
+                    <ins-tr>
+                        <ins-td-checkbox></ins-td-checkbox>
+                        <ins-td label="Keith McCornick" img-link="{{ 'admin/images/customer-logos/finalsprint.png' | asset_url }}" clickable>
+                            <ins-action>
+                                <ins-action-item label="View" app></ins-action-item>|
+                                <ins-action-item label="Edit" app></ins-action-item>|
+                                <ins-action-item label="Archive"></ins-action-item>
+                            </ins-action>
+                        </ins-td>
+                        <ins-td label="Primary"></ins-td>
+                        <ins-td label="423-261-2008"></ins-td>
+                        <ins-td label="349-025-0454"></ins-td>
+                        <ins-td label="rickey.streich@yahoo.com"></ins-td>
+                    </ins-tr>
+                    <ins-tr>
+                        <ins-td-checkbox></ins-td-checkbox>
+                        <ins-td label="Jean Davidson" img-link="{{ 'admin/images/customer-logos/finalsprint.png' | asset_url }}" clickable>
+                            <ins-action>
+                                <ins-action-item label="View" app></ins-action-item>|
+                                <ins-action-item label="Edit" app></ins-action-item>|
+                                <ins-action-item label="Archive"></ins-action-item>
+                            </ins-action>
+                        </ins-td>
+                        <ins-td label="Contact Type"></ins-td>
+                        <ins-td label="532-404-9676"></ins-td>
+                        <ins-td label="716-086-7679"></ins-td>
+                        <ins-td label="daryl.wintheiser@hotmail.com"></ins-td>
+                    </ins-tr>
+                    <ins-tr>
+                        <ins-td-checkbox></ins-td-checkbox>
+                        <ins-td label="Emilie lamb" img-link="{{ 'admin/images/customer-logos/finalsprint.png' | asset_url }}" clickable>
+                            <ins-action>
+                                <ins-action-item label="View" app></ins-action-item>|
+                                <ins-action-item label="Edit" app></ins-action-item>|
+                                <ins-action-item label="Archive"></ins-action-item>
+                            </ins-action>
+                        </ins-td>
+                        <ins-td label="Contact Type"></ins-td>
+                        <ins-td label="692-697-9330"></ins-td>
+                        <ins-td label="112-020-9609"></ins-td>
+                        <ins-td label="melisa.conn@gmail.com"></ins-td>
+                    </ins-tr>
+                    <ins-tr>
+                        <ins-td-checkbox></ins-td-checkbox>
+                        <ins-td label="Gilbert French" img-link="{{ 'admin/images/customer-logos/finalsprint.png' | asset_url }}" clickable>
+                            <ins-action>
+                                <ins-action-item label="View" app></ins-action-item>|
+                                <ins-action-item label="Edit" app></ins-action-item>|
+                                <ins-action-item label="Archive"></ins-action-item>
+                            </ins-action>
+                        </ins-td>
+                        <ins-td label="Contact Type"></ins-td>
+                        <ins-td label="325-706-8311"></ins-td>
+                        <ins-td label="098-613-5445"></ins-td>
+                        <ins-td label="germaine_hessel@yahoo.com"></ins-td>
+                    </ins-tr>
+                </ins-table>
+            </ins-card>
+        </div>
+
+        <div class="customer-form-actions clearfix" style="margin-bottom: 25px;">
+            <div class="grid-x">
+                <div class="large-8 cell">
+                    <div class="bottom-left-btn">
+                        <ins-button label="ARCHIVE COMPANY" color="negative"></ins-button>
+                    </div>
+                </div>
+                <div class="large-4 cell">
+                    <div class="bottom-right-btn">
+                        <ins-button label="UPDATE COMPANY" solid></ins-button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</div>
+<script>
+/* Add Company */
+function addCompany() {
+var insRendererEl = parent.document.querySelector('ins-renderer');
+insRendererEl.updateRoute({
+    label: 'Add Company',
+    link: '/admin/crm/add-company',
+    app: true
+});
+}
+
+/* Edit Company */
+  function editCompany() {
+    var insRendererEl = parent.document.querySelector('ins-renderer');
+    insRendererEl.updateRoute({
+      label: 'Edit Company',
+      link: '/admin/crm/edit-company',
+      app: true
+    });
+  }
+</script>

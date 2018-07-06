@@ -1,0 +1,93 @@
+---
+name: admin_update_profile
+resource: User
+resource_owner: anyone
+redirect_to: #
+configuration:
+  email:
+    property_options:
+      readonly: true
+  password:
+  name:
+    validation: { presence: true }
+  profiles:
+    administrator:
+      properties:
+        phone:
+        company:
+      enabled:
+        property_options:
+          default: true
+          readonly: true
+      validation:
+        presence: true
+    validation:
+      presence: true
+---
+{% query_graph 'current_user', result_name: 'g' %}
+{% form method: 'put' %}
+  <ins-card steady>
+    <div class="grid-container-full">
+      <div class="grid-x grid-padding-x">
+
+        <div class="large-6 medium-6 small-12 cell">
+          <div class="grid-x grid-padding-x">
+
+            <div class="large-12 cell">
+              <label class="form-label">Name
+                {% input 'name' value: g.current_user.name %}
+              </label>
+            </div>
+          
+            <div class="large-12 cell">
+              <label class="form-label">Email
+                {% input 'email' value: g.current_user.email %}
+              </label>
+            </div>
+          
+            <div class="large-12 cell">
+              <label class="form-label">Password
+                {% input 'password', as: 'password' %}
+              </label>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="large-6 medium-6 small-12 cell">
+          <div class="grid-x grid-padding-x">
+        
+            {% fields_for 'profiles' %}
+              {% fields_for 'administrator', form: 'profiles' %}
+                {% input 'enabled', as: 'hidden', form: 'administrator' %}
+
+                {% fields_for 'properties', form: 'administrator' %}
+                <div class="large-12 cell">
+                  <label class="form-label">Company
+                    {% input 'company', form: 'properties' %}
+                  </label>
+                </div>
+                <div class="large-12 cell">
+                  <label class="form-label">Phone
+                    {% input 'phone', form: 'properties' %}
+                  </label>
+                </div>
+                {% endfields_for %}
+              {% endfields_for %}
+            {% endfields_for %}
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </ins-card>
+
+  <div class="grid-container-full">
+    <div class="grid-x">
+      <div class="large-12 text-right cell submit-btn-wrap inline">
+      {% submit 'UPDATE' %}
+      </div>
+    </div>
+  </div>
+{% endform %}

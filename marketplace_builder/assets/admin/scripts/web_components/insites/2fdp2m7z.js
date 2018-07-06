@@ -1,0 +1,2 @@
+/*! Built with http://stenciljs.com */
+const{h:e}=window.insites;class s{render(){return e("div",{class:"ins-version"},e("span",null,this.value))}static get is(){return"ins-version"}static get properties(){return{value:{type:String,attr:"value"}}}static get style(){return".ins-version span{text-transform:uppercase;font-size:12px;font-family:'Open Sans',sans-serif;font-weight:700;color:#2c3148}"}}export{s as InsVersion};

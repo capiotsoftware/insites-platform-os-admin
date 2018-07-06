@@ -1,0 +1,127 @@
+---
+slug: admin/crm/case-details
+format: html
+layout_name: admin/empty_layout
+---
+{%- assign name = 'Case Details' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+
+<div class="grid-container-full">
+    <div class="grid-x grid-padding-x">
+        <div class="large-6 cell customer-details-container">
+            <ins-card steady>
+                <div class="grid-x">
+                    <div class="large-12 cell">
+                        <h1 class="contact-us-header">Case Details</h1>
+                    </div>
+                </div>
+
+                <div class="grid-x details-container">
+                    <div class="large-12 cell">       
+                        <table class="customer-details-table">
+                            <tbody>
+                                <tr>
+                                    <td class="fw-600">Case ID</td>
+                                    <td>GM001-029-619</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-600">Date Created</td>
+                                    <td>15-Apr-2018 05:13 PM AEST</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-600">Form Title</td>
+                                    <td>Booking Form</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-600">Workflow</td>
+                                    <td>Booking Form Workflow</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="case-details-section">
+                            <form class="contact-us-form">
+                                <div class="grid-x grid-padding-x">
+                                    <div class="large-12 cell">
+                                        <div class="head-office-container">
+                                            <label>Assigned To</label>
+                                            <select>
+                                                <option>Shane McGeorge</option>
+                                            </select>
+                                        </div>
+        
+                                        <div class="head-office-container">
+                                            <label>Status</label>
+                                            <select>
+                                                <option>Closed</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </ins-card>
+        </div>
+
+        <div class="large-6 cell">
+            <ins-card steady>
+                <div class="grid-x">
+                    <div class="large-12 cell">
+                        <h1 class="contact-us-header">Form Submission</h1>
+                    </div>
+                </div>
+                <div class="grid-x details-container">
+                    <div class="large-12 cell"> 
+                        <table class="customer-details-table">
+                            <tbody>
+                                <tr>
+                                    <td class="fw-600">Full Name</td>
+                                    <td class="fs-color">Dustin Myers</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-600">Email Address</td>
+                                    <td class="fs-color">DustinMyers@hudson.org</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-600">Contact Number</td>
+                                    <td>907=032-8228</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-600">Custom Field</td>
+                                    <td>Custom Field Data</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-600">File/ Submitted</td>
+                                    <td class="fs-color">file.jpg</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-600"></td>
+                                    <td class="fs-color">PDF_file.pdf</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </ins-card>
+        </div>
+
+        <div class="customer-form-actions clearfix" style="margin-bottom: 25px;">
+            <div class="grid-x">
+                <div class="large-8 cell">
+                    <div class="bottom-left-btn">
+                        <ins-button label="ARCHIVE CASE" color="negative"></ins-button>
+                    </div>
+                </div>
+                <div class="large-4 cell">
+                    <div class="bottom-right-btn">
+                        <ins-button label="UPDATE DETAILS" solid></ins-button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</div>

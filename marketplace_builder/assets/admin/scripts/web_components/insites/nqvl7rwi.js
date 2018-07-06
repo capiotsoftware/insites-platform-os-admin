@@ -1,0 +1,2 @@
+/*! Built with http://stenciljs.com */
+const{h:e}=window.insites;class t{componentDidLoad(){this.header&&this.insTrEl.classList.add("header")}render(){return e("slot",null)}static get is(){return"ins-tr"}static get encapsulation(){return"shadow"}static get properties(){return{header:{type:Boolean,attr:"header"},insTrEl:{elementRef:!0}}}static get style(){return":host(.header:hover){background-color:transparent}:host(:hover){background-color:#fafbfc}:host{display:table-row}"}}export{t as InsTr};

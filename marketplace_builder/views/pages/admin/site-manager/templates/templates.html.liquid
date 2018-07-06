@@ -1,0 +1,115 @@
+---
+slug: admin/site-manager/templates
+format: html
+layout_name: admin/empty_layout
+---
+{%- assign name = 'Templates' -%}
+{%- content_for 'pagetitle' -%}{{ name }}{%- endcontent_for -%}
+
+<div class="grid-container-full">
+    <div class="grid-x grid-padding-x">
+
+        <!-- <div class="large-12 cell content-blocks-container">
+          <ins-card steady>
+              <h2 class="title-page">Welcome to Templates</h2>
+              <p>templates help you save time by re-using common site elements (for example, your header and footer) instead of having then individually inserted in each page.</p>
+          </ins-card>
+        </div>
+
+        <div class="grid-container box-container">
+            <div class="grid-x align-center">
+                <h2 class="title-page">You don't have any templates yet.</h2>
+                <span>Would you like to create your first templates?</span>
+                <a href="/admin/site-manager/templates-form" class="button btn">ADD TEMPLATE</a>
+            </div>
+        </div> -->
+        <div class="large-12 cell templates-table-container">
+            <div class="large-12 small-12 medium-12 cell" style="margin-bottom: 25px">
+                <!-- <button type="button" class="button btn" onclick="addNewTemplate()">ADD TEMPLATE</button> -->
+                <ins-button label="ADD TEMPLATE" solid onclick="addNewTemplate()"></ins-button>
+            </div>
+            <ins-card no-padding steady>
+                <ins-table table-stripe page-number="1" page-size="10" total-count="3" size-options="[10, 20, 35]" button-label="APPLY"
+                with-action>
+                    <!-- <ins-searchbar slot="ins-searchbar" placeholder="Search..."></ins-searchbar> -->
+                    <ins-tr>
+                        <ins-th-checkbox></ins-th-checkbox>
+                        <ins-th bold sort-keyword="a" label="Title"></ins-th>
+                        <ins-th bold sort-keyword="c" label="Last Modified"></ins-th>
+                    </ins-tr>
+                    <ins-tr>
+                        <ins-td-checkbox></ins-td-checkbox>
+                        <ins-td label="Homepage Template">
+                            <ins-action>
+                                <ins-action-item onclick="editTemplate()" label="Edit" app></ins-action-item>|
+                                <ins-action-item label="Archive"></ins-action-item>
+                            </ins-action>
+                        </ins-td>
+                        <ins-td label="Today 11:35am"></ins-td>
+                    </ins-tr>
+                    <ins-tr>
+                        <ins-td-checkbox></ins-td-checkbox>
+                        <ins-td label="Default Template">
+                            <ins-action>
+                                <ins-action-item label="Edit" app></ins-action-item>|
+                                <ins-action-item label="Archive"></ins-action-item>
+                            </ins-action>
+                        </ins-td>
+                        <ins-td label="Yesterday 10:00pm"></ins-td>
+                    </ins-tr>
+                    <ins-tr>
+                        <ins-td-checkbox></ins-td-checkbox>
+                        <ins-td label="Contact Template">
+                            <ins-action>
+                                <ins-action-item onclick="editTemplate()" label="Edit" app></ins-action-item>|
+                                <ins-action-item label="Archive"></ins-action-item>
+                            </ins-action>
+                        </ins-td>
+                        <ins-td label="25-May-2018 - 09:00pm"></ins-td>
+                    </ins-tr>
+                    <ins-tr>
+                        <ins-td-checkbox></ins-td-checkbox>
+                        <ins-td label="System Template">
+                            <ins-action>
+                                <ins-action-item onclick="editTemplate()" label="Edit" app></ins-action-item>|
+                                <ins-action-item label="Archive"></ins-action-item>
+                            </ins-action>
+                        </ins-td>
+                        <ins-td label="25-May-2018 - 11:00pm"></ins-td>
+                    </ins-tr>
+                </ins-table>
+            </ins-card>
+        </div>
+
+    </div>
+</div>
+<script>
+    /**
+	 * Add new template button
+	 * 
+	 * onclick button
+	 **/
+	function addNewTemplate() {
+		var insRendererEl = parent.document.querySelector('ins-renderer');
+		insRendererEl.updateRoute({
+			label: 'New Template',
+			link: '/admin/site-manager/templates-form',
+			app: true
+		});
+    }
+    
+    /**
+	 * Edit Templates
+	 * 
+	 * Table list templates
+	 * */
+	function editTemplate() {
+		let _insRendererEl = parent.document.querySelector('ins-renderer');
+
+		_insRendererEl.updateRoute({
+			label: 'Edit Template',
+			link: '/admin/site-manager/templates-form',
+			app: true
+		});
+	}
+</script>
